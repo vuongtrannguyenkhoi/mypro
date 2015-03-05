@@ -1,0 +1,192 @@
+/* Template-specific stuff
+ *
+ * Customizations just for the template; these are not necessary for anything
+ * with disabling the responsiveness.
+ */
+
+/* Account for fixed navbar */
+body {
+  min-width: 992px;
+    overflow-x: hidden;
+}
+.body-slider{
+  min-width: 992px;
+  min-height: 610px;
+}
+/* Finesse the page header spacing */
+.page-header {
+  margin-bottom: 30px;
+}
+.page-header .lead {
+  margin-bottom: 10px;
+}
+
+
+/* Non-responsive overrides
+ *
+ * Utilitze the following CSS to disable the responsive-ness of the container,
+ * grid system, and navbar.
+ */
+
+/* Reset the container */
+.container {
+  min-width: 992px;
+}
+
+/* Demonstrate the grids */
+
+.container .navbar-header,
+.container .navbar-collapse {
+  margin-right: 0;
+  margin-left: 0;
+}
+  .box-header {
+    position: absolute;
+  }
+/* Always float the navbar header */
+.navbar-header {
+  float: left;
+}
+
+/* Undo the collapsing navbar */
+.navbar-collapse {
+  display: block !important;
+  height: auto !important;
+  padding-bottom: 0;
+  overflow: visible !important;
+}
+
+.navbar-toggle {
+  display: none;
+}
+.navbar-collapse {
+  border-top: 0;
+}
+
+.navbar-brand {
+  margin-left: -15px;
+}
+
+/* Always apply the floated nav */
+.navbar-nav {
+  float: left;
+  margin: 0;
+}
+.navbar-nav > li {
+  float: left;
+}
+
+
+/* Redeclare since we override the float above */
+/*.navbar-nav.navbar-right {
+  float: right;
+}*/
+
+/* Undo custom dropdowns */
+/*.navbar .navbar-nav .open .dropdown-menu {
+  position: absolute;
+  float: left;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-width: 0 1px 1px;
+  border-radius: 0 0 4px 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: #333;
+}*/
+/*.navbar .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > li > a:focus,
+.navbar .navbar-nav .open .dropdown-menu > .active > a,
+.navbar .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #fff !important;
+  background-color: #428bca !important;
+}
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a,
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+  color: #999 !important;
+  background-color: transparent !important;
+}*/
+.col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+float: left;
+}
+.col-lg-12 {
+  width: 100%;
+}
+.col-lg-11 {
+}
+.col-lg-10 {
+}
+.col-lg-9 {
+  width: 75%;
+}
+.col-lg-8 {
+width: 66.66666666666666%;
+}
+.col-lg-7 {
+  width: 58.333333333333336%;
+}
+.col-lg-6 {
+  width: 50%;
+}
+.col-lg-5 {
+width: 41.66666666666667%;
+}
+.col-lg-4 {
+  width: 33.33333333333333%;
+}
+.col-lg-3 {
+  width: 25%;
+}
+.col-lg-2 {
+  width: 16.666666666666664%;
+}
+.col-lg-offset-3 {
+  margin-left: 25%;
+}
+
+/* contact page */
+.contact-content{
+  min-width: 580px;
+}
+.contact-form{
+  min-width: 400px;
+}
+
+@media (max-width: 768px) {
+  .flexslider .slides img{
+    width: auto;
+    height: 100vh;
+    min-height: 610px;
+  }
+}
+
+/* col-sm */
+@media(min-width: 768px) {
+  .flexslider .slides img{
+    width: auto;
+    height: 100vh;
+    min-height: 610px;
+  }
+}
+/* col-md */
+@media(min-width: 992px) {
+  .flexslider .slides img{
+    width: auto;
+    height: 100vh;
+    min-height: 610px;
+  }
+
+}
+
+/* col-lg */
+@media(min-width: 1200px) {
+  .flexslider .slides img{
+    width: 100vw;
+    height: auto;
+  }
+}

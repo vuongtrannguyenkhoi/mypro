@@ -1,0 +1,56 @@
+doctype
+html( lang="en" )
+ head
+  title
+   | Master page title
+  link( href='frontend/assets/bootstrap/css/bootstrap.min.css',rel='stylesheet',type='text/css')
+
+  link( href='frontend/assets/plugins/flexslider/flexslider.css',rel='stylesheet',type='text/css')
+
+  link( href='frontend/css/module.css',rel='stylesheet',type='text/css')
+
+ body
+  .body-nav
+   .container
+    .row
+     .col-lg-12
+      nav.navbar(role='navigation')
+       .navbar-header
+        button.navbar-toggle(
+        type='button'
+        data-toggle='collapse'
+        data-target='#main-nav'
+        )
+         span.sr-only
+          | Toggle navigation
+         span.icon-bar
+         span.icon-bar
+         span.icon-bar
+        a(class='navbar-brand icon-home')
+         strong F O N Z
+         | P H O T O G R A P H Y
+       #main-nav(class='collapse navbar-collapse')
+        ul(class='nav navbar-nav navbar-right')
+         li.active
+          a(href='about.html') ABOUT
+         li.dropdown
+          a(href='about-history.html') WORK
+          ul.dropdown-menu
+           li
+            a(href='about.html') EVENTS
+           li
+            a(href='about.html') PORTRAITS
+           li
+            a(href='about.html') PROPERTY
+           li
+            a(href='about.html') PRODUCTS
+           li
+            a(href='about.html') SPORT
+           li
+            a(href='about.html') WEDDINGS
+         li
+          a(href='testimonials.html') TESTIMONIALS
+         li
+          a(href='contact.html') CONTACT
+
+

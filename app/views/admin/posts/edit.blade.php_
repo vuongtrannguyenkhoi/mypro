@@ -1,0 +1,247 @@
+<section class="content-header">
+    @if( count($errors->all()) )
+    <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li class="danger alert">{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+</section>
+
+<!-- Main content -->
+<section id="widget-grid">
+<div class="row">
+<article class="col-sm-12 col-md-12 col-lg-12">
+    <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-1" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false">
+        <!-- widget options:
+        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+        data-widget-colorbutton="false"
+        data-widget-editbutton="false"
+        data-widget-togglebutton="false"
+        data-widget-deletebutton="false"
+        data-widget-fullscreenbutton="false"
+        data-widget-custombutton="false"
+        data-widget-collapsed="true"
+        data-widget-sortable="false"
+        -->
+        <!-- widget div-->
+        <header>
+            <h2>Edit a post</h2>
+        </header>
+        <div role="content">
+
+            <!-- widget edit box -->
+            <div class="jarviswidget-editbox">
+                <!-- This area used as dropdown edit box -->
+            </div>
+            <!-- end widget edit box -->
+            <!-- widget content -->
+            <div class="widget-body">
+                {{ Form::model($post,
+                array(
+                'route' => array('admin.posts.update', $post->id),
+                'files'=>true,
+                )) }}
+                <input type="hidden" name="_method" value="PUT" />
+                <input type="hidden" name="id" value="{{ $post->id }}" />
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="box">
+                            <div class="box-body smart-form">
+                                <fieldset>
+                                    <section>
+                                        {{ Form::label('name','Post name') }}
+                                        <label class="input" for="">
+                                            {{ Form::text('name',null,
+                                            array(
+                                            'id' => 'name',
+                                            'class' => 'form-control input-sm',
+                                            'placeholder' => 'Post name',
+                                            'required'
+                                            )
+                                            )}}
+                                        </label>
+
+                                    </section>
+                                    <section>
+                                        {{ Form::label('slug','Permalink: '.url().'/'.$post->category->controller.'/'.$post->category->slug.'/',array('id'=>'permalink')) }}
+                                        <label class="input" for="">
+                                            {{ Form::text('slug',null,
+                                            array(
+                                            'id' => 'slug',
+                                            'class' => 'form-control input-sm',
+                                            'placeholder' => 'Post slug',
+                                            'required'
+                                            )
+                                            )}}
+                                        </label>
+                                    </section>
+                                    <section>
+                                        <div id="content-base-thumb">
+                                            <img id="base-thumb" src="{{ url($post->thumb) }}" alt="User Image">
+                                        </div>
+                                        <label class="label">File input</label>
+                                        <label for="file" class="input input-file">
+                                            <div class="button"><input type="file" name="file" onchange="this.parentNode.nextSibling.value = this.value">Browse</div><input type="text" placeholder="Include some files" readonly="">
+                                        </label>
+                                    </section>
+                                </fieldset>
+
+                            </div><!-- /.box-body -->
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="box">
+                            <div class="box-body smart-form">
+                                <fieldset>
+                                    <section>
+                                        {{ Form::label('category_id','Category') }}
+                                        <label class="select" for="">
+                                            <select class="selectpicker form-control input-sm" name="category_id" id="category_id">
+                                                @foreach ($categories as $parent)
+                                                <option value="{{ $parent->id }}" @if ($post->category_id == $parent->id)
+                                                selected
+                                                @endif>
+                                                @for ($i = 0; $i < $parent->depth; $i++)
+                                                -
+                                                @endfor
+                                                {{ $parent->name }}
+                                                </option>
+                                                @endforeach
+                                            </select>
+                                            <i></i>
+                                        </label>
+
+                                    </section>
+                                    <section>
+                                        {{ Form::label('status','Status') }}
+                                        <label class="select">
+                                            {{ Form::select('status', $statuses , null , array('class' => 'form-control input-sm') ) }}
+                                            <i></i>
+                                        </label>
+                                    </section>
+                                    <section>
+                                        <label class="toggle">
+                                            <input type="checkbox" name="featured" @if ($post->featured == 1)
+                                            checked
+                                            @endif>
+                                            <i data-swchon-text="Yes" data-swchoff-text="No"></i>Featured</label>
+                                        </label>
+                                    </section>
+                                    <section style="width:200px">
+                                        {{ Form::label('pubdate','Published date') }}
+                                        <div class="input-group date" id="pubdate" data-date="" data-date-format="yyyy-mm-dd">
+                                            {{ Form::text('pubdate',null,
+                                            array('class'=>'form-control',
+                                            'placeholder'=>'Published date')) }}
+                                                                                <span class="input-group-addon">
+                                                                                    <i class="glyphicon glyphicon-calendar"></i>
+                                                                                </span>
+                                        </div>
+                                    </section>
+                                    <section>
+                                        {{ Form::label('gallery_id','Gallery') }}
+                                        <label class="select" for="">
+                                            <select class="selectpicker form-control input-sm" name="gallery_id">
+                                                <option value="">Select a gallery</option>
+                                                @foreach ($galleries as $gallery)
+                                                    <option value="{{$gallery->id}}" @if ($gallery->id == $post->gallery_id)
+                                                            selected
+                                                            @endif>{{$gallery->name}}</option>
+                                                @endforeach
+                                            </select>
+                                            <i></i>
+                                        </label>
+                                    </section>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-lg-12 ">
+                        <div class="box smart-form">
+                            <div class="box-body">
+                                <section>
+                                    {{ Form::label('description','Description') }}
+                                    <label class="textarea" for="">
+                                        {{ Form::textarea('description',null,
+                                        array(
+                                        'id' => 'description',
+                                        'class' => null,
+                                        'placeholder' => 'Post description',
+                                        )
+                                        )}}
+                                    </label>
+                                </section>
+                                <section>
+                                    {{ Form::label('content','Content') }}
+                                    <label class="textarea" for="">
+                                        {{ Form::textarea('content',null,
+                                        array(
+                                        'id' => 'content',
+                                        'class' => 'editor',
+                                        'placeholder' => 'Post content',
+                                        )
+                                        )}}
+                                    </label>
+                                </section>
+                            </div>
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-sm btn-primary pull-left">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{ Form::close() }}
+            </div>
+        </div>
+    </div>
+</article>
+</div>
+</section>
+
+<script>
+    renderEditor();
+    getSlug('#name','#slug');
+</script>
+<script type="text/javascript">
+    pageSetUp();
+    var pagefunction = function() {
+        $("#pubdate").datepicker();
+
+        $('#category_id').change(function(){
+
+            $.ajax({
+                type: 'get',
+                url: '{{url('admin/api/categories/')}}'+'/' + $(this).val(),
+                data:{},
+                success:function(rs){
+                   rs = $.parseJSON(rs);
+                    if(rs.status){
+                        var category = $.parseJSON(rs.category);
+                        updatePermalink(category);
+                    }
+                }
+            });
+        });
+        function updatePermalink(category){
+            $('#permalink').text('Permalink: ' + '{{url()}}' +'/' + category.controller + '/' + category.slug + '');
+        };
+    };
+
+    // end pagefunction
+    pagefunction();
+
+</script>
+
+<div class="modal fade" id="remoteModal" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>

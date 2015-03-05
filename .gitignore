@@ -1,0 +1,13 @@
+/bootstrap/compiled.php
+/vendor
+/public/node_modules
+/public/frontend/images
+public/smartadmin
+public/upload
+.idea
+composer.phar
+composer.lock
+.env.*.php
+.env.php
+.DS_Store
+Thumbs.db

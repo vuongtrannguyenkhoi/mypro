@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>May pro</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Hege Refsnes">
+    <!-- bootstrap 3.2.0 -->
+    <link rel="stylesheet" href="frontend/assets/bootstrap/css/bootstrap.min.css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="frontend/js/html5shiv.min.js"></script>
+    <script src="frontend/js/respond.min.js"></script>
+    <![endif]-->
+    <!-- plugins -->
+
+    <!-- modules -->
+    <link rel="stylesheet" href="frontend/css/module.css"/>
+    <link rel="stylesheet" href="frontend/css/non-responsive.css"/>
+    <link rel="stylesheet" href="frontend/css/responsive.css"/>
+</head>
+<body>
+<div class="body-head" id="map-1">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d979.8490405596443!2d106.7066290005521!3d10.780939380018108!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4ed99869d7%3A0x9f376eca133a4993!2zTmfDtCBWxINuIE7Eg20sIELhur9uIE5naMOpLCBRdeG6rW4gMSwgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1424836331332" width="100%" height="250" frameborder="0" style="border:0"></iframe>
+</div>
+<div class="body-nav">
+
+    <nav class="navbar" role="navigation">
+        <div class="">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+							<span class="sr-only">
+								Toggle navigation
+							</span>
+							<span class="icon-bar">
+							</span>
+							<span class="icon-bar">
+							</span>
+							<span class="icon-bar">
+							</span>
+                </button>
+                <a href="index.html" class="navbar-brand icon-home">
+                    <p><img src="frontend/images/logo.jpg" alt=""/></p>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="main-nav">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="blog.html">BLOG</a>
+                    </li>
+                    <li>
+                        <a href="about.html">GIỚI THIỆU</a>
+                    </li>
+                    <li>
+                        <a href="project.html">DỰ ÁN</a>
+                    </li>
+                    <li>
+                        <a href="faq.html">HỎI ĐÁP</a>
+                    </li>
+                    <li class="active">
+                        <a href="contact.html">LIÊN HỆ</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    <div class="box-social-links">
+        <p>
+            <a href=""><img src="frontend/images/icon-facebook.png" alt=""/></a>
+            <a href=""><img src="frontend/images/icon-googleplus.png" alt=""/></a>
+            <a href=""><img src="frontend/images/icon-vimeo.png" alt=""/></a>
+            <a href=""><img src="frontend/images/icon-youtube.png" alt=""/></a>
+        </p>
+    </div>
+</div>
+
+<div class="body-contact padding-top-bottom-30">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact-content">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="contact-form-text">
+                                <h3>Liên Hệ</h3>
+                                <p>We’d love to hear from you.</p>
+                                <p>Phone, e-mail or pay us a visit.</p>
+                            </div>
+                            <hr/>
+                            <div class="contact-form">
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="name" class="col-sm-3 control-label">Họ tên</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="name" name="name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="col-sm-3 control-label">Email</label>
+                                        <div class="col-sm-9">
+                                            <input type="email" class="form-control" id="email" name="email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone" class="col-sm-3 control-label">Số điện thoại</label>
+                                        <div class="col-sm-9">
+                                            <input type="tel" class="form-control" id="phone" name="phone">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="subject" class="col-sm-3 control-label">Tiêu đề</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="subject" name="subject">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="subject" class="col-sm-3 control-label">Nội dung</label>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" rows="10" name="body"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-9">
+                                            <button type="submit" class="btn btn-default">Gửi</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <h3>Where to find us</h3>
+                            <p>141 Zodiac Street,
+                                Palm Village, Makati City,
+                                Philippines 1600</p>
+                            <h3>Get in touch</h3>
+                            <p>Landline: +63 (2) 895 7687</p>
+                            <p>Mobile: +63 (928) 470 4145</p>
+                            <p>Email: hellojmag at gmail dot com</p>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d979.8490405596443!2d106.7066290005521!3d10.780939380018108!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4ed99869d7%3A0x9f376eca133a4993!2zTmfDtCBWxINuIE7Eg20sIELhur9uIE5naMOpLCBRdeG6rW4gMSwgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1424836331332" width="100%" height="375" frameborder="0" style="border:0"></iframe>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="body-footer padding-top-bottom-30">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer">
+                    <p class="text-center">© 2015 MAY PRODUCTION. All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- jquery 1.11.1 -->
+<script src="frontend/js/jquery-1.11.1.min.js"></script>
+<script src="frontend/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="frontend/js/app.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script>
+    $(document).ready(function(){
+        var styles = [
+            {
+                featureType: 'water', // set the water color
+                elementType: 'geometry.fill', // apply the color only to the fill
+                stylers: [
+                    { color: '#828b91' }
+                ]
+            },{
+                featureType: 'landscape.natural', // set the natural landscape
+                elementType: 'all',
+                stylers: [
+                    { hue: '#b8aa8e' },
+                    { saturation: -17 },
+                    { lightness: -18 }
+                ]
+            }
+            ,{
+                featureType: 'poi', // set the point of interest
+                elementType: 'geometry',
+                stylers: [
+                    { hue: '#919191' },
+                    { saturation: -100 },
+                    { lightness: 20 }
+                ]
+            },{
+                featureType: 'road', // set the road
+                elementType: 'geometry',
+                stylers: [
+                    { hue: '#919191' },
+                    { saturation: -100 },
+                    { lightness: 20 }
+                ]
+            },{
+                featureType: 'road.local', // set the local road
+                elementType: 'all',
+                stylers: [
+                    { hue: '#3c4348' },
+                    { saturation: -80 },
+                    { lightness: 50 }
+                ]
+            }
+        ];
+        var myLatlng = new google.maps.LatLng(14.56117,121.041242);
+        var options = {
+            mapTypeControlOptions: {
+                mapTypeIds: ['Styled']
+            },
+            center: myLatlng,
+            zoom: 14,
+            disableDefaultUI: true,
+            mapTypeId: 'Styled',
+            zoomControl: true,
+            zoomControlOptions: { style: google.maps.ZoomControlStyle.SMALL }
+        };
+        var div = document.querySelector("#map");
+        var map = new google.maps.Map(div, options);
+        var styledMapType = new google.maps.StyledMapType(styles, { name: 'Styled' });
+        map.mapTypes.set('Styled', styledMapType);
+        var image = 'http://jasonmagbanua.com/wp-content/themes/create.ph-theme/library/images/marker.png';
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            title:"Jason Magbanua Office",
+            icon: image,
+            optimized: false
+
+        });
+    }); /* end of as page load scripts */
+</script>
+</body>
+</html>
